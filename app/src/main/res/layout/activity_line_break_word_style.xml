@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    tools:context=".LineBreakWordStyleActivity">
+
+    <TextView
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:background="#33000000"
+        android:gravity="center"
+        android:lineBreakWordStyle="none"
+        android:text="동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세" />
+
+    <TextView
+        android:id="@+id/txt_hy"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="#3300FF00"
+        android:gravity="center"
+        android:lineBreakWordStyle="phrase"
+        android:text="동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세" />
+
+</LinearLayout>
+
+
