@@ -4,12 +4,38 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.window.OnBackInvokedDispatcher
+import androidx.activity.OnBackPressedCallback
 
 class MainActivity : AppCompatActivity() {
+    private val onBackPressedCallback = OnBackPressedCallbackChild(true)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initView()
 
+        onBackInvokedDispatcher.registerOnBackInvokedCallback(OnBackInvokedDispatcher.PRIORITY_DEFAULT, onBackInvokedCallback)
+    }
+
+    private val onBackInvokedCallback: ()-> Unit = {
+        //조건에 따라 등록
+        onBackPressedDispatcher.addCallback(onBackPressedCallback)
+        android.util.Log.d("test-ys-","when onBackInvokedCalled.")
+    }
+
+    override fun onDestroy() {
+        onBackInvokedDispatcher.unregisterOnBackInvokedCallback(onBackInvokedCallback)
+        super.onDestroy()
+    }
+
+    inner class OnBackPressedCallbackChild(enabled: Boolean): OnBackPressedCallback(enabled) {
+        override fun handleOnBackPressed() {
+            android.util.Log.d("test-ys-","handleOnBackPressed")
+            finish()
+        }
+    }
+
+    private fun initView(){
         findViewById<Button>(R.id.btn_locale).setOnClickListener {
             startActivity(Intent(this, LocaleActivity::class.java))
         }
