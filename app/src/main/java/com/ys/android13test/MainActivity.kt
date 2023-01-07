@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_tile_service).setOnClickListener {
             startActivity(Intent(this, TileServiceActivtiy::class.java))
         }
+
+        findViewById<Button>(R.id.btn_revoke_permission).setOnClickListener {
+            startActivity(Intent(this, RevokePermissionActivity::class.java))
+        }
     }
 
 }
