@@ -13,6 +13,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_locale).setOnClickListener {
             startActivity(Intent(this, LocaleActivity::class.java))
         }
+
+        findViewById<Button>(R.id.btn_hyphen).setOnClickListener {
+            startActivity(Intent(this, HyphenActivity::class.java))
+        }
+
     }
 
 }

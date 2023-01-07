@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    tools:context=".HyphenActivity">
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:background="#33000000"
+        android:gravity="center"
+        android:text="Hyphenation makes wrapped text easier to read and helps make your UI more adaptive. Starting in Android 13, hyphenation performance is optimized by as much as 200% so you can enable it in your TextView with almost no impact on rendering performance. To enable faster hyphenation, use the fullFast or normalFast frequencies in setHyphenationFrequency()." />
+
+    <TextView
+        android:id="@+id/txt_hy"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="#3300FF00"
+        android:gravity="center"
+        android:breakStrategy="high_quality"
+        android:hyphenationFrequency="fullFast"
+        android:text="Hyphenation makes wrapped text easier to read and helps make your UI more adaptive. Starting in Android 13, hyphenation performance is optimized by as much as 200% so you can enable it in your TextView with almost no impact on rendering performance. To enable faster hyphenation, use the fullFast or normalFast frequencies in setHyphenationFrequency()." />
+
+</LinearLayout>
