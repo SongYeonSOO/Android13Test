@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_line_break).setOnClickListener {
             startActivity(Intent(this, LineBreakWordStyleActivity::class.java))
         }
-
+        findViewById<Button>(R.id.btn_tile_service).setOnClickListener {
+            startActivity(Intent(this, TileServiceActivtiy::class.java))
+        }
     }
 
 }
