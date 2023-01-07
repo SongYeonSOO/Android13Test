@@ -10,6 +10,13 @@
         android:theme="@style/Theme.Android13Test"
         tools:targetApi="31">
         <activity
+            android:name=".TileServiceActivtiy"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".LineBreakWordStyleActivity"
             android:exported="false">
             <meta-data
@@ -43,6 +50,17 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <service
+            android:name=".Test13TileService"
+            android:exported="true"
+            android:icon="@android:drawable/btn_star"
+            android:label="@string/hello_android13"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
