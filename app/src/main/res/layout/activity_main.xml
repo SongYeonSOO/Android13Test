@@ -28,4 +28,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TileService" />
+    <Button
+        android:id="@+id/btn_revoke_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RevokePermission" />
 </GridLayout>
