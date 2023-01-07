@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, HyphenActivity::class.java))
         }
 
+        findViewById<Button>(R.id.btn_line_break).setOnClickListener {
+            startActivity(Intent(this, LineBreakWordStyleActivity::class.java))
+        }
+
     }
 
 }
