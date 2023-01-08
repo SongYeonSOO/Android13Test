@@ -54,6 +54,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_revoke_permission).setOnClickListener {
             startActivity(Intent(this, RevokePermissionActivity::class.java))
         }
+        findViewById<Button>(R.id.btn_spatial_audio).setOnClickListener {
+            startActivity(Intent(this, SpatialAudioActivity::class.java))
+        }
     }
 
 }
