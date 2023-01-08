@@ -11,10 +11,13 @@
         android:label="@string/app_name"
         android:localeConfig="@xml/locales_config"
         android:supportsRtl="true"
+        android:resizeableActivity="false"
         android:theme="@style/Theme.Android13Test">
         <activity
             android:name=".FGSTestAudioActivity"
-            android:exported="false">
+            android:exported="false"
+            android:maxAspectRatio="1.2"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -29,42 +32,54 @@
 
         <activity
             android:name=".RevokePermissionActivity"
-            android:exported="false">
+            android:exported="false"
+            android:maxAspectRatio="1.2"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".TileServiceActivtiy"
-            android:exported="false">
+            android:exported="false"
+            android:maxAspectRatio="1.2"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".LineBreakWordStyleActivity"
-            android:exported="false">
+            android:exported="false"
+            android:maxAspectRatio="1.2"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".HyphenActivity"
-            android:exported="false">
+            android:exported="false"
+            android:maxAspectRatio="1.2"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".LocaleActivity"
-            android:exported="false">
+            android:exported="false"
+            android:maxAspectRatio="1.2"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:maxAspectRatio="1.2"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,7 +92,9 @@
         </activity>
         <activity
             android:name=".SpatialAudioActivity"
-            android:exported="false">
+            android:exported="false"
+            android:maxAspectRatio="1.2"
+            >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
