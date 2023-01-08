@@ -17,6 +17,9 @@ class FGSTestAudioActivity : AppCompatActivity() {
     private val launcher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
         //do nothing.
     }
+    private val notificationLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+        createNotificationChannel()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +33,16 @@ class FGSTestAudioActivity : AppCompatActivity() {
             startService()
         }
 
-        createNotificationChannel()
+        val permissionGranted = ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.POST_NOTIFICATIONS
+        ) == PackageManager.PERMISSION_GRANTED
+
+        if(permissionGranted){
+            createNotificationChannel()
+        } else {
+            notificationLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
     }
 
 
@@ -47,8 +59,6 @@ class FGSTestAudioActivity : AppCompatActivity() {
 
                 android.util.Log.d("test-ys-","manager?.notificationChannels=${manager?.notificationChannels}")
             }
-
-
     }
 
     private fun startService() {
