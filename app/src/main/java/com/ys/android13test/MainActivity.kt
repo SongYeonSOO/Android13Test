@@ -57,6 +57,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_spatial_audio).setOnClickListener {
             startActivity(Intent(this, SpatialAudioActivity::class.java))
         }
+
+        findViewById<Button>(R.id.btn_fgs_test).setOnClickListener {
+            startActivity(Intent(this, FGSTestAudioActivity::class.java))
+        }
     }
 
 }
