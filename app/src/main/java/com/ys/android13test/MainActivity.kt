@@ -1,8 +1,12 @@
 package com.ys.android13test
 
+import android.content.ClipData
+import android.content.ClipDescription
+import android.content.ClipboardManager
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Button
 import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
@@ -61,8 +65,27 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_fgs_test).setOnClickListener {
             startActivity(Intent(this, FGSTestAudioActivity::class.java))
         }
+
+        findViewById<Button>(R.id.btn_clipboard).setOnClickListener {
+            addClipData(false)
+        }
+
+        findViewById<Button>(R.id.btn_clipboard_sensitive).setOnClickListener {
+            addClipData(true)
+        }
     }
 
+    private fun addClipData(sensitive: Boolean) {
+        val clipData = ClipData.newPlainText("test_isSensitive_$sensitive", "hello world")
+        val manager = getSystemService(ClipboardManager::class.java)
+        manager.setPrimaryClip(clipData.apply {
+            description.extras = PersistableBundle().apply {
+                putBoolean(ClipDescription.EXTRA_IS_SENSITIVE, sensitive)
+            }
+        })
+    }
 }
+
+
 
 

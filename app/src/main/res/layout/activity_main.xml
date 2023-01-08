@@ -44,4 +44,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FGS TEST" />
+
+    <Button
+        android:id="@+id/btn_clipboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clipboard TEST" />
+
+    <Button
+        android:id="@+id/btn_clipboard_sensitive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clipboard SENSITIVE INFO TEST" />
+
 </GridLayout>
